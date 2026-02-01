@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-  max-width: 428px; 
+  max-width: 320px; 
   width: 100%;
   padding: 0 16px;
   margin: 0 auto;
@@ -192,7 +192,7 @@ body {
   line-height: 24px; 
   letter-spacing: 0.02em;
   text-decoration: none;
-  color: #2e2f42; 
+  color: #4d5ae5; 
   display: block;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap; 
@@ -379,6 +379,12 @@ body {
   border-radius: 4px;
   margin: 0 auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: #404bbf;
 }
 
 @media screen and (min-width: 768px) {
@@ -961,72 +967,54 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     text-transform: capitalize;
 }
 
-
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column; /* Одна колонка на мобільці */
     row-gap: 48px;
     padding: 0;
     margin: 0;
     list-style: none;
-
 }
 
 .portfolio-item {
-    width: 100%;
+    width: 100%; /* Картка на весь екран мобілки */
 }
-
-.box-shadow {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
-                0px 1px 1px rgba(46, 47, 66, 0.16), 
-                0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
 
 .port-img-wrapper {
     position: relative;
     overflow: hidden;
-        height: auto; 
-    }
-
+}
 
 .port-img-wrapper img {
     display: block;
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: 280px; /* Висота за мобільним макетом */
+    object-fit: cover; /* Щоб картинки не плющило */
     object-position: center;
 }
 
 
-.overlay {
-    display: none;
-}
-
 .portfolio-content {
     padding: 32px 16px;
-    border: 1px solid #e7e9fc;;
+    border: 1px solid #e7e9fc;
     border-top: none;
-    
 }
-
 
 /* ========== TABLET (>=768px) ========== */
 @media screen and (min-width: 768px) {
     .portfolio-list {
+        flex-direction: row; /* Картки стають у ряд */
         column-gap: 24px;
         row-gap: 72px;
     }
 
     .portfolio-item {
-        width: calc((100% - 24px) / 2);
-    }
-    .port-img-wrapper {
-        height: 315px; 
+        width: calc((100% - 24px) / 2); /* Дві в ряд */
     }
 
     .port-img-wrapper img {
-        height: auto; 
+        height: 300px;
     }
 }
 
@@ -1037,7 +1025,8 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     }
 
     .portfolio-item {
-        width: calc((100% - 48px) / 3);
+        width: calc((100% - 48px) / 3); /* Три в ряд */
+        box-shadow: none;
         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -1046,26 +1035,30 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
                     0px 1px 1px rgba(46, 47, 66, 0.16), 
                     0px 2px 1px rgba(46, 47, 66, 0.08);
     }
-
-    
-    .overlay {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 40px 32px;
-        background-color: #4d5ae5;
-        color: #f4f4fd;
-        transform: translateY(100%);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .portfolio-item:hover .overlay {
-        transform: translateY(0);
-    }
 }
+.overlay {
+    /* Оверлей має бути прихований спочатку на всіх пристроях */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    color: #f4f4fd;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .overlay {
+    transform: translateY(0);
+}
+
+
+
+
 
 .footer {
   background-color: #2e2f42;
