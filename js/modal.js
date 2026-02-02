@@ -14,8 +14,9 @@
   }
 })();
 
-// Скрипт для мобільного меню (твій існуючий код)
+
 (() => {
+  /* ===== MOBILE MENU ===== */
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
   const closeMenuBtn = document.querySelector('.js-close-menu');
@@ -26,4 +27,23 @@
 
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn.addEventListener('click', toggleMenu);
+
+  /* ===== MODAL ===== */
+  const modal = document.querySelector('[data-modal]');
+  const openModalBtn = document.querySelector('[data-modal-open]');
+  const closeModalBtn = document.querySelector('[data-modal-close]');
+
+  const toggleModal = () => {
+    modal.classList.toggle('is-open');
+  };
+
+  openModalBtn.addEventListener('click', toggleModal);
+  closeModalBtn.addEventListener('click', toggleModal);
+
+  // Закриття по кліку на backdrop
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      toggleModal();
+    }
+  });
 })();
