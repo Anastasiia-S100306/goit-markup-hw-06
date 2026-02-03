@@ -54,6 +54,7 @@ body {
     align-items: center;
    justify-content: space-between;
   height: 56px;
+ padding: 16px 16px;
 }
 
 
@@ -92,16 +93,20 @@ body {
 
 /* ===== MOBILE MENU BACKDROP ===== */
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #ffffff;
-  z-index: 999;
-  padding: 80px 35px 40px 40px;
-  display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  padding: 72px 16px 40px 40px;
+  display: flex;
+  align-items: flex-start;
+  
+  
   
   opacity: 0;
   visibility: hidden;
@@ -149,7 +154,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin-bottom: 168px; 
+    list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: flex-start;
 }
 
 .mobile-nav-link {
@@ -173,7 +181,8 @@ body {
 .mobile-address {
   font-style: normal;
     margin-bottom: 48px; 
-   margin-top: 0px;
+    margin-top: 168px;
+
    
 }
 
@@ -189,7 +198,7 @@ body {
     font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 20px; 
-  line-height: 24px; 
+  line-height: 1.2; 
   letter-spacing: 0.02em;
   text-decoration: none;
   color: #4d5ae5; 
@@ -221,11 +230,9 @@ body {
 
 .mobile-social-list {
   display: flex;
-  justify-content: space-between; 
+  gap: 40px;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  align-items: center;
+  
 }
 
 .mobile-social-link {
@@ -235,10 +242,11 @@ body {
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
+    justify-content: center;
   fill: #f4f4fd; 
   gap: 40px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  left: 16px;
 }
 
 .mobile-social-link:hover,
@@ -267,7 +275,7 @@ body {
   .nav-list {
     display: flex;
     gap: 40px;
-    margin-left: 76px;
+    margin-left: 120px;
   }
 
   .header-nav-link {
@@ -354,7 +362,7 @@ body {
   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
   image-set(
         url("../images/people-office-mobile.jpg") 1x,
-        url("../images/people-office-mobile@2x.jpg") 2x
+        url("../images/people-office-mobile-2x.jpg") 2x
   );
   background-repeat: no-repeat;
   background-position: center;
@@ -374,9 +382,10 @@ body {
 .hero-title {
   font-size: 36px;
   line-height: 1.11;
+  letter-spacing: 0.02em;
   text-align: center;
   color: #ffffff;
-  max-width: 320px;
+  max-width: 216px;
   margin: 0 auto 72px;
 }
 
@@ -390,10 +399,13 @@ body {
   cursor: pointer;
   border-radius: 4px;
   margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: #404bbf;
@@ -405,7 +417,7 @@ body {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
                     image-set(
                       url("../images/people-office-tablet.jpg") 1x,
-                      url("../images/people-office-tablet@2x.jpg") 2x
+                      url("../images/people-office-tablet-2x.jpg") 2x
                     );
   }
   .hero-title {
@@ -423,7 +435,7 @@ body {
 background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
  image-set(             
         url("../images/people-office-desktop.jpg") 1x,
-        url("../images/people-office-desktop@2x.jpg") 2x
+        url("../images/people-office-desktop-2x.jpg") 2x
   );
   }
   .hero-title { margin-bottom: 48px; }
@@ -500,13 +512,14 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
               border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+              fill: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: #404bbf;
-  border: none;
-  fill: #ffffff;
+    border: none;
+    fill: #ffffff;
 }
 
 
@@ -578,6 +591,7 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
   outline: transparent;
   resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 16px;
 }
 
 .modal-textarea:focus {
@@ -600,9 +614,16 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
+
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+  background-color: #31d0aa;
+}
+
+
 .check-text {
     font-size: 12px;
-    line-height: 1.17;
+    line-height: 1.33;
     letter-spacing: 0.04em;
     color: #8e8f99;
     display: flex;
@@ -612,7 +633,7 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
 
 .modal-textarea::placeholder {
   font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.33;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4); 
 }
@@ -621,6 +642,9 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
   color: #4d5ae5;
   text-decoration: underline;
   margin-left: 4px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
 }
 
 .checkbox-icon {
@@ -903,7 +927,7 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
 }
 
 .team-content {
-  padding: 32px 0; 
+  padding: 32px 16px; 
   text-align: center;
 }
 
@@ -980,6 +1004,10 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
   }
 }
 
+
+/* ================= PORTFOLIO SECTION ================= */
+
+/* --- Заголовок секції --- */
 .portfolio-title {
     margin-bottom: 72px;
     font-weight: 700;
@@ -991,6 +1019,18 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     text-transform: capitalize;
 }
 
+/* --- Підзаголовок картки --- */
+.portfolio-subtitle {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-transform: capitalize;
+}
+
+/* --- Список карток --- */
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
@@ -1001,10 +1041,15 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     list-style: none;
 }
 
+/* --- Окрема картка --- */
 .portfolio-item {
     width: 100%; 
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
+                0px 1px 1px rgba(46, 47, 66, 0.16), 
+                0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+/* --- Обгортка зображення --- */
 .port-img-wrapper {
     position: relative;
     overflow: hidden;
@@ -1018,11 +1063,20 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     object-position: center;
 }
 
-
+/* --- Контент картки --- */
 .portfolio-content {
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
+}
+
+/* --- Текст картки --- */
+.portfolio-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
 }
 
 /* ========== TABLET (>=768px) ========== */
@@ -1050,7 +1104,7 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
 
     .portfolio-item {
         width: calc((100% - 48px) / 3); 
-        box-shadow: none;
+        box-shadow: none; /* Тінь можна вимкнути на десктопі, якщо хочеш */
         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -1060,8 +1114,9 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
                     0px 2px 1px rgba(46, 47, 66, 0.08);
     }
 }
+
+/* --- Overlay на картці при ховері --- */
 .overlay {
-    
     position: absolute;
     top: 0;
     left: 0;
@@ -1079,7 +1134,6 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
 .portfolio-item:hover .overlay {
     transform: translateY(0);
 }
-
 
 
 
@@ -1174,13 +1228,14 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
 }
 
 .footer-input {
-  width: 264px;
+    width: 288px;
   height: 40px;
   border: 1px solid #ffffff;
   background-color: transparent;
   border-radius: 4px;
   padding-left: 16px;
   color: #ffffff;
+  font-weight: 400;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
@@ -1188,6 +1243,13 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-input::placeholder {
+  color: #ffffff;
+  font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+}
 .footer-input:focus {
   border-color: #31d0aa;
   outline: none;
